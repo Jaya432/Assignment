@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+        <p id="call">
+          function personIntro() { <br>
+            console.log(`${this.firstName} ${this.lastName}`); <br>
+            document.getElementById('call').innerHTML += "My name is " +  this.firstName + " " +this.lastName <br>
+          }; <br>
+          
+          const person1 = { <br>
+            firstName: 'Sutton', <br>
+            lastName: 'Brady' <br>
+          };<br>
+          
+          personIntro.call({ firstName : 'Jane', lastName : 'Sloan' }); <br> <br>
+        </p>
+    </div>
+</body>
+<script>
+    function personIntro() {
+    console.log(`${this.firstName} ${this.lastName}`);
+    document.getElementById('call').innerHTML += "Output :" + " " + "My name is " +  this.firstName + " " +this.lastName
+  };
+  
+  const person1 = {
+    firstName: 'Sutton',
+    lastName: 'Brady'
+  };
+  
+  personIntro.call({ firstName : 'Jane', lastName : 'Sloan' });
+</script>
+</html>

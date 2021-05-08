@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="apply">
+     <p id="demo"></p>
+  </div>
+</body>
+<script>
+  var obj2 = {
+    name: 'Sutton'
+  };
+  
+  var fullName = function(middle, last){
+    return `Full name is: ${this.name} ${middle}. ${last}`;
+  }
+  let credentials= ['R', 'Brady'];
+  console.log(fullName.apply(obj2, credentials))
+  document.getElementById('demo').innerHTML += fullName.apply(obj2, credentials)
+
+// addition operation
+ 
+  function sum(num1, num2, num3) {
+    console.log(this + num1 + num2 + num3);
+    document.getElementById('apply').innerHTML  +=  this + num1 + num2 + num3 + '<br>' + '<br>'
+  }
+  
+  sum.call(2, 3, 4 , 5);
+  sum.apply(2, [3, 4, 10]);
+</script>
+</html>

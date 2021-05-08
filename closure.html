@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <p>function OuterFunction() { <br>
+            var outerVariable = 100; <br>
+            function InnerFunction() { <br>
+                alert(outerVariable); <br>
+            } <br>
+            return InnerFunction; <br>
+        } <br>
+        var innerFunc = OuterFunction(); <br>
+        innerFunc();<br> <br> </p>
+    </div>
+</body>
+<script>
+    function OuterFunction() {
+        var outerVariable = 100;
+        function InnerFunction() {
+            alert(outerVariable);
+        }
+        return InnerFunction;
+    }
+    var innerFunc = OuterFunction();
+    innerFunc();
+</script>
+</html>
